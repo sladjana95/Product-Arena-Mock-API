@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "ea705773-a77e-4c1d-ba6e-c0795db8c751",
+		"name": "Product Arena",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23991550"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with wrong email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"heyhey\",\r\n    \"password\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login/?invalid",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login",
+						""
+					],
+					"query": [
+						{
+							"key": "invalid",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No Network Connection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login/?no-network",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login",
+						""
+					],
+					"query": [
+						{
+							"key": "no-network",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Internal Server Error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login/?server-error",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login",
+						""
+					],
+					"query": [
+						{
+							"key": "server-error",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fullstack Developer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/fullstack-developer/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"fullstack-developer",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
